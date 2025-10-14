@@ -1,1 +1,42 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img{
+    width: 100%;
+}
+.container {
+    max-width: 1370px;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+
+.header {
+    border-bottom: 1px solid #cccccc67;
+}
+
+.nav {
+    margin: 20px auto;
+}
+.logo{
+    max-width: 150px;
+}
+.main{
+    margin-top: 20px;
+}
+.cards{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 30px;
+    margin-top: 10px;
+}
+.card{
+    border: 1px solid #000;
+    border-radius: 10px;
+    box-shadow: 2px 3px 2px #6f6f6f48;
+    padding: 30px 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
