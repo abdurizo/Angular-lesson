@@ -1,11 +1,5 @@
 import { Component, Input } from '@angular/core';
-
-export interface Card {
-  id: number;
-  title: string;
-  text: string;
-  photo: string;
-}
+import { Card } from '../card';
 
 @Component({
   selector: 'card',
