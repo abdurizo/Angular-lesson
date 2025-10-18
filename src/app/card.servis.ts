@@ -65,4 +65,23 @@ export class CardServis {
             photo: '../assets/image/photo_camera.png',
         },
     ];
+    /**
+     * 
+     * @returns 
+     */
+    getAllCards() {
+        return this.cards
+    }
+    /**
+     * 
+     */
+    getCardById(id: number) {
+        return this.cards.find((card) => card.id === id)
+    }
+    /**
+     * 
+     */
+    sendData(fio:string, comment:string){
+        alert(`${fio}: ${comment}`)
+    }
 }

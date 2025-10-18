@@ -2,8 +2,12 @@
   <input type="text" #input />
   <button (click)="search(input.value)">Click ME</button>
   <div class="cards">
-    <card class="card" *ngFor="let card of filterCard " [card]="card"></card>
+    <card class="card" 
+    [routerLink]="['details', card.id]"
+    *ngFor="let card of filterCard" 
+    [card]="card"></card>
     <!-- <cardwhiout class="card"></cardwhiout> -->
     <!-- <cardwhiout class="card"></cardwhiout> -->
   </div>
 </main>
+<!-- [routerLink]="['details']" -->

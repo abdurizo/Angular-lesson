@@ -1,0 +1,13 @@
+.details_section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    flex-direction: row-reverse;
+align-items: center;
+}
+
+.image {
+    width: 500px;
+    height: auto;
+    order: 2;
+}
