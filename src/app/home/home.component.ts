@@ -15,13 +15,25 @@ import { Router, RouterLink } from "@angular/router";
 export class HomeComponent {
 
 
-  filterCard: Card[];
+  filterCard!: Card[];
+  /**
+   * 
+   */
+  cards!:Card[];
+  /**
+   * 
+   * @param CardServis 
+   * @param router 
+   */
   constructor(private CardServis: CardServis, private router: Router) {
-    this.filterCard = this.CardServis.getAllCards();
+    this.CardServis.getAllCards().then((cards)=>{
+      this.cards = cards;
+      this.filterCard = cards;
+    })
   }
 
   search(text: string) {
-    this.filterCard = this.CardServis.getAllCards().filter((card) =>
+    this.filterCard = this.cards.filter((card) =>
       card.title.toUpperCase().includes(text.toUpperCase())
     )
   }

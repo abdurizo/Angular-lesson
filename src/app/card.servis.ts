@@ -3,85 +3,25 @@ import { Card } from './card';
 
 @Injectable()
 export class CardServis {
-    cards: Card[] = [
-        {
-            id: 1,
-            title: 'Lincoln',
-            text: 'Read It and Weep',
-            photo: '../assets/image/ASUS_Logo.png',
-        },
-        {
-            id: 2,
-            title: 'Mazda',
-            text: 'Happiness',
-            photo: '../assets/image/Apple-logo.png',
-        },
-        {
-            id: 3,
-            title: 'Audi',
-            text: '12:08 East of Bucharest (A fost sau n-a fost?)',
-            photo: '../assets/image/iron-small-2.png',
-        },
-        {
-            id: 4,
-            title: 'Chevrolet',
-            text: 'Drums Along the Mohawk',
-            photo: '../assets/image/galaxy-s21.png',
-        },
-        {
-            id: 5,
-            title: 'Hyundai',
-            text: 'Old Boy',
-            photo: '../assets/image/shivaki.png',
-        },
-        {
-            id: 6,
-            title: 'GMC',
-            text: 'Evocateur: The Morton Downey Jr. Movie',
-            photo: '../assets/image/Samsung_Logo.png',
-        },
-        {
-            id: 7,
-            title: 'Pontiac',
-            text: 'Penthouse',
-            photo: '../assets/image/Rectangle 6.jpg',
-        },
-        {
-            id: 8,
-            title: 'Nissan',
-            text: 'Night Moves',
-            photo: '../assets/image/halal.png',
-        },
-        {
-            id: 9,
-            title: 'Ford',
-            text: 'King Is Alive, The',
-            photo: '../assets/image/hairbrush.png',
-        },
-        {
-            id: 10,
-            title: 'Toyota',
-            text: 'Van, The',
-            photo: '../assets/image/photo_camera.png',
-        },
-    ];
+    urel = "http://localhost:3000/cards";
     /**
      * 
-     * @returns 
      */
-    getAllCards() {
-        return this.cards
+    async getAllCards(): Promise<Card[]> {
+        const data = await fetch(this.urel);
+        return (await data.json()) ?? [];
     }
     /**
      * 
      */
-    getCardById(id: number) {
-        return this.cards.find((card) => card.id === id)
+    async getCardById(id: number) {
+        const card = await fetch(`${this.urel}/${id}`);
+        return (await card.json()) ?? [];
     }
     /**
      * 
      */
-    sendData(fio:string, comment:string){
+    sendData(fio: string, comment: string) {
         alert(`${fio}: ${comment}`)
     }
 }

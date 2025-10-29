@@ -2,13 +2,13 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CardServis } from '../card.servis';
 import { Card } from '../card';
-import { FormControl, FormGroup,  ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 
 @Component({
   selector: 'app-details',
   standalone: true,
-  imports: [ ReactiveFormsModule ],
+  imports: [ReactiveFormsModule],
   templateUrl: './details.component.html',
   styleUrl: './details.component.css'
 })
@@ -29,9 +29,11 @@ export class DetailsComponent {
    */
   constructor(private route: ActivatedRoute, private cardServis: CardServis) {
     const cardId: string = this.route.snapshot.params['id'];
-    this.card = this.cardServis.getCardById(+cardId);
+    this.cardServis.getCardById(+cardId).then((card) => {
+      this.card = card
+    });
   }
-  send(){
-   this.cardServis.sendData(this.form.value.name, this.form.value.comment)
+  send() {
+    this.cardServis.sendData(this.form.value.name, this.form.value.comment)
   }
 }
