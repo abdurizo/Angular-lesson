@@ -1,4 +1,4 @@
-export interface Card {
+export interface Word {
     id: number;
     title: string;
     text: string;

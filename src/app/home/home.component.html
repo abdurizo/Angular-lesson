@@ -1,0 +1,6 @@
+<input type="text" #input>
+<button (click)="search(input.value)">Поиск</button>
+<div class="cards">
+    <!-- <word></word> -->
+    <word *ngFor="let w of filterWords" [word]="w"></word>
+</div>

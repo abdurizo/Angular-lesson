@@ -1,0 +1,41 @@
+.slider_card {
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid rgba(93, 95, 239, 0.2);
+    
+}
+
+.image_card {
+    display: flex;
+    justify-content: center;
+    padding: 2px 4px;
+    max-width: 200px;
+    height: 200px;
+}
+
+
+.content {
+    background: rgba(247, 247, 254, 1);
+    padding: 10px
+}
+
+.sup_title {
+    color: #ccc;
+    font-family: SFProDisplay-Regular;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: 0%;
+    text-align: left;
+    margin-bottom: 7px;
+}
+
+.title {
+    color: rgb(14, 24, 44);
+    font-family: SFProDisplay-Bold;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 0%;
+    text-align: left;
+    margin-bottom: 15px;
+}
