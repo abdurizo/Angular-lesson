@@ -2,5 +2,7 @@
 <button (click)="search(input.value)">Поиск</button>
 <div class="cards">
     <!-- <word></word> -->
-    <word *ngFor="let w of filterWords" [word]="w"></word>
+    <word 
+   [routerLink]="['details', w.id]"
+    *ngFor="let w of filterWords" [word]="w"></word>
 </div>

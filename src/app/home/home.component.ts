@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Word } from '../word';
 import { WordServis } from '../word.servis';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,20 +13,28 @@ export class HomeComponent {
   /**
    * 
    */
-  filterWords!: Word[] 
+  filterWords!: Word[]
   /**
    * 
    */
   constructor(
-    private WordServis: WordServis
-  ){
-    
+    private WordServis: WordServis,
+    private router:Router
+  ) {
+    this.filterWords = WordServis.getAllWords();
   }
   /**
    * 
    */
   search(text: string) {
-    this.filterWords = this.words.filter((word) =>
+    this.filterWords = this.WordServis.getAllWords().filter((word) =>
       word.title.toLocaleLowerCase().includes(text.toLocaleLowerCase()))
   }
+  /**
+   * 
+   */
+  navigateToDetails(){
+    this.router.navigate(['details'])
+  }
 }
+

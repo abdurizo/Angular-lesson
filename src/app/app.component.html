@@ -1,8 +1,9 @@
 <header class="header">
-    <div class="image">
+    <a class="image " [routerLink]="['']">
         <img src="../assets/image/logo.png" alt="">
-    </div>
+    </a>
 </header>
 <main class="container">
-   <app-home></app-home>
+   <!-- <app-home></app-home> -->
+    <router-outlet></router-outlet>
 </main>

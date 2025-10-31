@@ -3,7 +3,7 @@ import { Word } from './word';
 
 @Injectable()
 export class WordServis {
-     "words": Word[] = [
+  "words": Word[] = [
     {
       "id": 1,
       "title": "Nissan",
@@ -65,29 +65,38 @@ export class WordServis {
       "photo": "../assets/image/photo_camera.png"
     }
   ]
-/**
- * 
- */
+  /**
+   * 
+   */
 
-    // urel = "http://localhost:3000/cards";
-    /**
-     * 
-     */
-    // async getAllCards(): Promise<Word[]> {
-    //     const data = await fetch(this.urel);
-    //     return (await data.json()) ?? [];
-    // }
-    /**
-     * 
-     */
-    // async getCardById(id: number) {
-    //     const card = await fetch(`${this.urel}/${id}`);
-    //     return (await card.json()) ?? [];
-    // }
-    /**
-     * 
-     */
-    // sendData(fio: string, comment: string) {
-    //     alert(`${fio}: ${comment}`)
-    // }
+  getAllWords() {
+    return this.words;
+  }
+  /**
+   * 
+   */
+  getWordById(id: number) {
+    return this.words.find((word) => word.id === id)
+  }
+  // urel = "http://localhost:3000/cards";
+  /**
+   * 
+   */
+  // async getAllCards(): Promise<Word[]> {
+  //     const data = await fetch(this.urel);
+  //     return (await data.json()) ?? [];
+  // }
+  /**
+   * 
+   */
+  // async getCardById(id: number) {
+  //     const card = await fetch(`${this.urel}/${id}`);
+  //     return (await card.json()) ?? [];
+  // }
+  /**
+   * 
+   */
+  // sendData(fio: string, comment: string) {
+  //     alert(`${fio}: ${comment}`)
+  // }
 }

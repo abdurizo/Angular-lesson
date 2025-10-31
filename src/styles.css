@@ -15,6 +15,7 @@ img {
 }
 
 .image {
+   display: inline-block;
     max-width: 130px;
     height: 12px;
 }
