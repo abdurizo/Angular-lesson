@@ -8,12 +8,14 @@ import { HomeComponent } from './home/home.component';
 import { WordServis } from './word.servis';
 import { RouterModule } from '@angular/router';
 import { routes } from './app.routes';
+import {  ReactiveFormsModule } from '@angular/forms';
+import { DetailsComponent } from './details/details.component';
 
 
 
 @NgModule({
-  declarations: [AppComponent,WordComponent,HomeComponent],
-  imports: [BrowserModule,RouterModule.forRoot(routes) ],
+  declarations: [AppComponent,WordComponent,HomeComponent,DetailsComponent],
+  imports: [BrowserModule,RouterModule.forRoot(routes),ReactiveFormsModule ],
   providers:[WordServis],
   bootstrap: [AppComponent]
 })
