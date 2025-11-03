@@ -17,23 +17,30 @@ export class HomeComponent {
   /**
    * 
    */
+  words!: Word[];
+  /**
+   * 
+   */
   constructor(
-    private WordServis: WordServis,
-    private router:Router
+    private WordServis: WordServis, private router: Router
   ) {
-    this.filterWords = WordServis.getAllWords();
+    this.WordServis.getAllWords().then((words) => {
+      this.words = words
+      this.filterWords = words;
+    });
   }
   /**
    * 
    */
   search(text: string) {
-    this.filterWords = this.WordServis.getAllWords().filter((word) =>
-      word.title.toLocaleLowerCase().includes(text.toLocaleLowerCase()))
+    this.filterWords = this.words.filter((word) =>
+      word.title.toLocaleLowerCase().includes(text.toLocaleLowerCase())
+    )
   }
   /**
    * 
    */
-  navigateToDetails(){
+  navigateToDetails() {
     this.router.navigate(['details'])
   }
 }

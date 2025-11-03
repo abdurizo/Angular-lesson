@@ -1,5 +1,6 @@
 <div>{{word?.text}}</div>
-<form [formGroup]="form">
+<div class="image"><img [src]="word?.photo" alt=""></div>
+<form [formGroup]="form" (submit)="send()">
     <p><label for="name ">FIO</label></p>
     <input type="text" id="name" name="name" formControlName="name">
     <p><label for="comment ">FIO</label></p>
